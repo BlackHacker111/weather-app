@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-content">
+                <div class="nav-left">
+                    <h1 class="nav-title">Weather Forecast</h1>
+                    <div class="datetime">
+                        <span id="currentDate"></span>
+                        <span id="currentTime"></span>
+                    </div>
+                </div>
+                <div class="nav-right">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Search city...">
+                        <button id="searchBtn">🔍</button>
+                    </div>
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="themeToggle">
+                        <label for="themeToggle">🌙</label>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Large Weather Card -->
+            <div class="main-weather-card">
+                <div class="weather-animation">
+                    <div class="cloud" id="mainCloud">
+                        <div class="rain-drops" id="rainDrops"></div>
+                    </div>
+                    <div class="sun" id="mainSun"></div>
+                </div>
+                <div class="main-weather-info">
+                    <h2 id="mainCityName">New York</h2>
+                    <div class="main-temp" id="mainTemp">22°C</div>
+                    <div class="main-status" id="mainStatus">Partly Cloudy</div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Wind</span>
+                            <span class="detail-value" id="windSpeed">12 km/h</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Humidity</span>
+                            <span class="detail-value" id="humidity">65%</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">UV Index</span>
+                            <span class="detail-value" id="uvIndex">6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Side Panel -->
+            <div class="side-panel">
+                <h3>Other Cities</h3>
+                <div class="city-cards">
+                    <div class="city-card" data-city="London">
+                        <div class="city-name">London</div>
+                        <div class="city-temp">18°C</div>
+                        <div class="city-status">Rainy</div>
+                        <div class="city-icon">🌧️</div>
+                    </div>
+                    <div class="city-card" data-city="Tokyo">
+                        <div class="city-name">Tokyo</div>
+                        <div class="city-temp">25°C</div>
+                        <div class="city-status">Sunny</div>
+                        <div class="city-icon">☀️</div>
+                    </div>
+                    <div class="city-card" data-city="Paris">
+                        <div class="city-name">Paris</div>
+                        <div class="city-temp">20°C</div>
+                        <div class="city-status">Cloudy</div>
+                        <div class="city-icon">☁️</div>
+                    </div>
+                    <div class="city-card" data-city="Sydney">
+                        <div class="city-name">Sydney</div>
+                        <div class="city-temp">28°C</div>
+                        <div class="city-status">Clear</div>
+                        <div class="city-icon">🌞</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Temperature Graph -->
+        <div class="chart-container">
+            <h3>5-Day Temperature Forecast</h3>
+            <div class="chart-wrapper">
+                <canvas id="temperatureChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
